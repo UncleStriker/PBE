@@ -1,14 +1,15 @@
-from django.contrib import admin
+from rest_framework.serializers import ModelSerializer
 from posts.models import Post, Personas
-# Register your models here.
 
-@admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
-    lis_display = ['id', 'title']
+class PostSerializer(ModelSerializer):
+    class Meta:
+        model = Post
+        fields = ['id','title','content']
 
-@admin.register(Personas)
-class PersonaAdmin(admin.ModelAdmin):
-    lis_display = ['id',
+class PersonaSerializer(ModelSerializer):
+    class Meta:
+        model = Personas
+        fields = ['id',
                     'nombre',
                     'apellidos',
                     'rut',
