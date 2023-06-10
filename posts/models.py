@@ -5,7 +5,7 @@ class Post(models.Model):
     title = models.CharField(max_length=50)
     content = models.TextField()
     def __str__(self):
-        return self.body
+        return (self.body)
 
 
 class Persona(models.Model):
@@ -15,5 +15,4 @@ class Persona(models.Model):
     correo = models.TextField()
 
     def __str__(self):
-        return self.body
-
+        return (self.body)
